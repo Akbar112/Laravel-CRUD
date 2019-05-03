@@ -24,6 +24,17 @@ class FormController extends Controller
 
     // dd($request);
 
-    return redirect('/');
+    return redirect('/view')->with('Success','Data buku telah ditambahkan');
+  }
+  public function view()
+  {
+    $buku = Buku::all();
+    return view ('view', compact('buku'));
+  }
+  public function destroy($id)
+  {
+    $buku = Buku::find($id);
+    $buku->delete();
+    return redirect('/view');
   }
 }

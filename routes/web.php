@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::get('/form', 'FormController@input');
 Route::post('/form/input-process','FormController@inputprocess');
+Route::get('/view', 'FormController@view');
+Route::get('/destroy/{id}', 'FormController@destroy');

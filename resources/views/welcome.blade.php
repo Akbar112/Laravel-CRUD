@@ -89,6 +89,7 @@
                     <a href="#">Read</a>
                     <a href="#">Update</a>
                     <a href="#">Delete</a>
+                    <a href="/view">Daftar Peminjam</a>
                 </div>
             </div>
         </div>
