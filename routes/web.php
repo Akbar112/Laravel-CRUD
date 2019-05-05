@@ -19,3 +19,5 @@ Route::get('/form', 'FormController@input');
 Route::post('/form/input-process','FormController@inputprocess');
 Route::get('/view', 'FormController@view');
 Route::get('/destroy/{id}', 'FormController@destroy');
+Route::get('/edit/{id}', 'FormController@edit');
+Route::post('/update/{id}', 'FormController@update');
