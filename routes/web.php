@@ -11,13 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/view', 'FormController@view');
 });
 
 Route::get('/form', 'FormController@input');
 Route::post('/form/input-process','FormController@inputprocess');
-Route::get('/view', 'FormController@view');
+//Route::get('/view', 'FormController@view');
 Route::get('/destroy/{id}', 'FormController@destroy');
 Route::get('/edit/{id}', 'FormController@edit');
 Route::post('/update/{id}', 'FormController@update');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
